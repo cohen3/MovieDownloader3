@@ -21,13 +21,35 @@ public class EventListener implements Observable{
             System.out.print("Type in an event that you want: ");
             event = scanner.nextLine();
             String[] s = event.split(" ");
-            if(s[0].equals("fileRequest") && s.length < 2) continue;
-            if(s.length > 1)
+//            if(s[0].equals("fileRequest") && s.length < 2) continue;
+//            if(s.length > 1)
+//            {
+//                if(!s[0].equals("fileRequest")) continue;
+//                event = s[0];
+//                MDownloader.size = Integer.parseInt(s[1]);
+//                System.out.println( event +" "+ MDownloader.size);
+//            }
+            if(s[0].equals("disk") || s[0].equals("fileRequest"))
             {
-                if(!s[0].equals("fileRequest")) continue;
-                event = s[0];
-                MDownloader.size = Integer.parseInt(s[1]);
-                System.out.println( event +" "+ MDownloader.size);
+                if(s.length < 2) continue;
+                if(s[0].equals("disk"))
+                {
+                    try{ disk = Integer.parseInt(s[1]);
+                        if(disk < 0) {disk = 100; System.out.println("disk space must be greater than 0, set to default...");}
+                        System.out.println("disk is now: "+disk);}
+                    catch(Exception e1){ System.out.println("second argument is not a number"); }
+                    finally { continue; }
+                }
+                if(s[0].equals("fileRequest"))
+                {
+                    try {
+                        event = s[0];
+                        MDownloader.size = Integer.parseInt(s[1]);
+                        System.out.println(event + " " + MDownloader.size);
+                    }catch(Exception e1){
+                        System.out.println("second argument is not a number");
+                    }
+                }
             }
             if(event.equals("exit")) break;
             for(Event e1 : Event.values()) {
