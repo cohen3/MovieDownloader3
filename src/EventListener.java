@@ -45,6 +45,7 @@ public class EventListener implements Observable{
                     try {
                         event = s[0];
                         MDownloader.size = Integer.parseInt(s[1]);
+                        if(MDownloader.size < 0) continue;
                         System.out.println(event + " " + MDownloader.size);
                     }catch(Exception e1){
                         System.out.println("second argument is not a number");
