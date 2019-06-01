@@ -61,5 +61,6 @@ public class MDownloader implements Observer{
 
     public void Exit() {
         doJob = false;
+        current.stop();
     }
 }

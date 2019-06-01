@@ -29,4 +29,7 @@ public class OffState implements IMachineState {
 
     @Override
     public void handleEvent(Event e) { }
+
+    @Override
+    public void stop() { }
 }

@@ -29,4 +29,7 @@ public class CompositeOnInternetOff implements ICompositeOnState {
 
     @Override
     public void handleEvent(Event e) { }
+
+    @Override
+    public void stop() { }
 }

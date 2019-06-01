@@ -52,6 +52,11 @@ public class OnState implements IMachineState {
         catch(Exception e1) { current.handleEvent(e); }//System.out.println("Invalid Event!"); }
     }
 
+    @Override
+    public void stop() {
+        current.stop();
+    }
+
     // as object methods
 
     public void setState(ICompositeOnState s)

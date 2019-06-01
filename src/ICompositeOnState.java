@@ -5,4 +5,5 @@ public interface ICompositeOnState {
     void Enter();
     void Exit();
     void handleEvent(Event e);
+    void stop();
 }

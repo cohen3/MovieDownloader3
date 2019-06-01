@@ -18,23 +18,6 @@ public class RDdownload_State implements IRegionStates {
     @Override
     public void Do()
     {
-        //System.out.println("do "+(p.intValue() < 100)+", "+internet);
-//        while(p.intValue() < 100 && internet)
-////        {
-////            try {
-////                Thread.sleep(1000);
-////            } catch (InterruptedException e) {
-////                e.printStackTrace();
-////            }
-////            s += MDownloader.speed;
-////            p.set((int)(((double)s/(double)MDownloader.size)*100.0));
-////            System.out.println(((double)s/(double)MDownloader.size)+" / 100 = "+ (s/MDownloader.size)/100.0+"\n"+p.intValue());
-////        }
-////        if(internet) {
-////            s = 0;
-////            CompositeOnInternetOn.po++;
-////            handleEvent(Event.when);
-////        }
         s += MDownloader.speed;
         p.set((int)(((double)s/(double)MDownloader.size)*100.0));
         if(p.intValue() == 20) System.out.println("done 20%, can now watch movie");
